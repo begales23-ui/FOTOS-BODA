@@ -158,3 +158,60 @@ grid-template-columns:repeat(4,1fr);
 background:#fffdf9ee;
 border-top:1px solid #e7ded3;
 padding:9px 5px
+}
+</style>
+</head>
+<body>
+<div class="app">
+<div id="welcome" class="screen active welcome">
+<div class="brand">FOTOS BODA</div>
+<div class="heart">💕</div>
+<div class="tag">
+<p>¡Comparte los momentos más especiales de nuestra boda!</p>
+</div>
+<button class="primary" onclick="goTo('gallery')">Ver Fotos</button>
+</div>
+
+<div id="gallery" class="screen">
+<div class="top">
+<h1 class="title">Galería</h1>
+<button onclick="goTo('welcome')">←</button>
+</div>
+<div class="gallery" id="photoGallery"></div>
+<div class="upload">
+<p>¿Tienes fotos para compartir?</p>
+<label class="filebtn">
+Subir Fotos
+<input type="file" id="fileInput" multiple accept="image/*" onchange="previewFiles()">
+</label>
+<div class="preview" id="preview"></div>
+</div>
+</div>
+</div>
+
+<nav id="nav"></nav>
+
+<script>
+function goTo(screen) {
+document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+document.getElementById(screen).classList.add('active');
+}
+
+function previewFiles() {
+const fileInput = document.getElementById('fileInput');
+const preview = document.getElementById('preview');
+preview.innerHTML = '';
+
+Array.from(fileInput.files).forEach(file => {
+const reader = new FileReader();
+reader.onload = (e) => {
+const img = document.createElement('img');
+img.src = e.target.result;
+preview.appendChild(img);
+};
+reader.readAsDataURL(file);
+});
+}
+</script>
+</body>
+</html>
