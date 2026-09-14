@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#68715f">
+<title>FOTOS BODA</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+background:#eeeae3;
+color:#302c29;
+font-family:Arial,sans-serif
+}
+.app{
+max-width:520px;
+min-height:100vh;
+margin:auto;
+background:#f8f4ed
+}
+.screen{
+display:none;
+min-height:100vh;
+padding:28px 20px 90px
+}
+.active{display:block}
+.welcome{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center
+}
+.brand{
+font:30px Georgia,serif;
+letter-spacing:5px
+}
+.heart{
+font-size:45px;
+color:#b79a67;
+margin:28px
+}
+.tag{
+font:18px Georgia,serif;
+line-height:1.5;
+color:#746b63
+}
+button{
+cursor:pointer;
+border:0
+}
+.primary{
+background:#68715f;
+color:white;
+border-radius:28px;
+padding:15px 28px;
+font-size:15px;
+margin-top:28px
+}
+h1,h2,h3{
+font-family:Georgia,serif;
+font-weight:400
+}
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+.title{font-size:27px}
+.card{
+background:#fffdf9;
+border:1px solid #e7ded3;
+border-radius:22px;
+padding:20px;
+margin:18px 0
+}
+.event{text-align:center}
+.event .date{
+font-size:12px;
+letter-spacing:2px;
+color:#b79a67
+}
+.event h2{margin:8px 0}
+.actions{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px
+}
+.action{
+background:#fffdf9;
+border:1px solid #e7ded3;
+border-radius:17px;
+padding:14px 5px
+}
+.action b{
+display:block;
+font-size:22px;
+margin-bottom:7px
+}
+.action small{font-size:11px}
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:7px
+}
+.photo{
+width:100%;
+aspect-ratio:1;
+object-fit:cover;
+border-radius:11px;
+background:#e8e0d6
+}
+.empty{
+text-align:center;
+color:#777;
+padding:35px 5px;
+grid-column:1/-1
+}
+.upload{
+text-align:center;
+padding:35px 18px
+}
+.upload p{
+color:#777;
+line-height:1.5
+}
+input{display:none}
+.filebtn{
+display:inline-block;
+background:#68715f;
+color:white;
+padding:14px 22px;
+border-radius:28px;
+font-weight:bold
+}
+.preview{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:7px;
+margin-top:20px
+}
+.preview img{
+width:100%;
+aspect-ratio:1;
+object-fit:cover;
+border-radius:10px
+}
+nav{
+position:fixed;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:min(520px,100%);
+display:none;
+grid-template-columns:repeat(4,1fr);
+background:#fffdf9ee;
+border-top:1px solid #e7ded3;
+padding:9px 5px
